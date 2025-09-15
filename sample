@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/2317042/NotesApp.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'pip install flask'
+            }
+        }
+
+        stage('Run Notes App') {
+            steps {
+                bat 'python ex2pipeline.py'
+            }
+        }
+    }
+}
