@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/2317042/NotesApp.git'
+                git branch: 'main', url: 'https://github.com/2317042/Notes-App.git'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Notes App') {
             steps {
-                bat 'python ex2pipeline.py'
+                bat 'python p2.py'
             }
         }
     }
